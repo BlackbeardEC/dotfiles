@@ -1,0 +1,23 @@
+[global_config]
+  borderless = True
+  geometry_hinting = False
+[keybindings]
+  copy = <Primary><Alt>c
+  paste = <Primary><Alt>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.69
+    background_image = None
+    background_type = transparent
+    cursor_blink = False
+    scrollbar_position = hidden
+    show_titlebar = False
