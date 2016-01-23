@@ -35,6 +35,12 @@ bindsym $mod+Return exec terminator
 # Gyazo
 bindsym $mod+g exec gyazo
 
+# Firefox
+bindsym $mod+b exec firefox
+
+# kill focused window
+bindsym $mod+Shift+x exec pkill -f 'x11grab'
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -140,10 +146,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -176,8 +182,8 @@ bar {
 # execute commands on startup
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton -b
-exec /home/lulz/.scripts/mouse.sh
-exec /home/lulz/.dropbox-dist/dropboxd
+exec --no-startup-id /home/lulz/.scripts/mouse.sh
+# exec /home/lulz/.dropbox-dist/dropboxd
 
 
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/media/pics/screens/'
@@ -193,5 +199,23 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 new_window			none
 hide_edge_borders	both
 
+# sleep suspend hibernate etc.
+set $Locker i3lock -i ~/media/pics/walls/anon-fu.png && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker , mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
 
 
