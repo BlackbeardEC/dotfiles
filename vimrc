@@ -63,7 +63,7 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+"command W w !sudo tee % > /dev/null
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,8 +187,9 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
+set shiftwidth=8
 set tabstop=4
+set softtabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -240,6 +241,8 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>t<leader> :tabnext<cr>
+map <leader>ts :tab sp /tmp/scribble.txt<cr>
+map <leader>ev :tabnew ~/.vimrc<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -274,7 +277,7 @@ endtry
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=2
+set laststatus=1
 
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
@@ -367,7 +370,8 @@ map <leader>x :e ~/buffer.md<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-
+" Reload vimrc
+nnoremap <leader>rv :source ~/.vimrc<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

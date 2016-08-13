@@ -1,0 +1,18 @@
+# My theme 
+
+# $i3-theme-window
+# class                 border  backgr. text    indicator
+client.focused          #b10c08 #b10c08 #ffffff #b10c08
+client.focused_inactive #b10c08 #851916 #ffffff #851916
+client.unfocused        #b10c08 #851916 #ffffff #851916
+client.urgent           #2f343a #900000 #ffffff #900000
+# $i3-theme-bar
+colors {
+	background #300a09
+	statusline #ff0000
+	separator #851916
+	focused_workspace  #ff0000 #300a09 #ff0000
+	active_workspace   #851916 #300a09 #851916
+	inactive_workspace #851916 #300a09 #851916
+	urgent_workspace   #2f343a #b10c08 #ffffff
+}
