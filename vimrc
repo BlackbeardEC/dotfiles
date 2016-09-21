@@ -187,7 +187,7 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=8
+set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
@@ -439,4 +439,19 @@ set foldmethod=marker
 set number
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
+
+" plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'unite.vim'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'fatih/vim-go'
+
+call plug#end()
+
+" Colors from https://github.com/flazz/vim-colorschemes
+colorscheme crayon
+
+" enable neocomplete
+:NeoCompleteEnable
 
