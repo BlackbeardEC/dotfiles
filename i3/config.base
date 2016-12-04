@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.OpenSans-Regular 9
-font pango:DejaVu Sans 9
+font pango:DejaVu Sans Mono 9
 # font pango:Source Code Pro 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -50,6 +50,9 @@ bindsym $mod+shift+m exec --no-startup-id termite -e mutt
 
 #set feh floating by default
 for_window [class="feh"] floating enable
+
+#set virtualbox floating by default
+for_window [class="Oracle VM VirtualBox"] floating enable
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec "dmenu_run -l 10"
@@ -195,23 +198,23 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # messing with borders
-new_window		    pixel 4
+new_window		    pixel 6
 hide_edge_borders	both
 #border             pixel 1
 #
 #Gaps
 gaps inner 10
 gaps outer 20
-smart_gaps on
+#smart_gaps on
 
 # sleep suspend hibernate etc.
-set $Locker i3lock -i ~/media/pics/walls/anon-fu.png && sleep 1
+set $Locker i3lock -i ~/media/pics/walls/anon-fu.png # && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker , mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym s exec systemctl suspend #, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
