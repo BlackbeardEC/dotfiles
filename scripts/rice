@@ -14,7 +14,8 @@ case $rice in
    "1") exec j4-make-config -r 1 & feh --bg-scale /home/lulz/media/pics/walls/creepy-1452217666786.jpg;;
    "green") exec j4-make-config -r green & feh --bg-scale /home/lulz/media/pics/walls/green-0u5pOJJ.jpg;;
    "red") exec j4-make-config -r red & feh --bg-scale /home/lulz/media/pics/walls/rwby-rose.jpg;;
-   "blue") exec j4-make-config -r blue & feh --bg-scale /home/lulz/media/pics/walls/blue-2LkpcRu.jpg;;
+   "black") exec j4-make-config -r black & feh --bg-scale /home/lulz/media/pics/walls/city01.jpg;;
+   "blue") exec j4-make-config -r blue & feh --bg-scale /home/lulz/media/pics/walls/blue-city.jpg;;
    "brown") exec j4-make-config -r brown & feh --bg-scale /home/lulz/media/pics/walls/brown01.jpg;;
    "purple") exec j4-make-config -r purple & feh --bg-scale /home/lulz/media/pics/walls/purple-space.jpg;;
    "yellow") exec j4-make-config -r yellow & feh --bg-scale /home/lulz/media/pics/walls/kill-bill-cartoon.jpg;;
