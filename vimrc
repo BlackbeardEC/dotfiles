@@ -446,6 +446,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'unite.vim'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'fatih/vim-go'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+
 
 call plug#end()
 
@@ -453,5 +457,6 @@ call plug#end()
 colorscheme crayon
 
 " enable neocomplete
-:NeoCompleteEnable
+" :NeoCompleteEnable
+let g:neocomplete#enable_at_startup = 1 
 
